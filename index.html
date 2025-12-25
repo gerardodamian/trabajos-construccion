@@ -20,16 +20,65 @@
     }
 
     .hero {
-      position: relative;
-      background: linear-gradient(135deg, #f97316, #ca8a04);
-      text-align: center;
-      padding: 70px 20px;
-    }
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('img/reparaciones-del-hogar.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.hero-title {
+  font-size: 38px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-name {
+  font-size: 26px;
+  font-weight: 600;
+  color: #fbbf24;
+  margin-top: 10px;
+}
+
+.hero-logo {
+  width: 120px;
+  max-width: 40%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero-logo {
+    width: 100px;
+  }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  .hero-logo {
+    width: 80px;
+  }
+}
+
+
 
     .hero-overlay {
       max-width: 900px;
       margin: auto;
     }
+
+    .hero-name {
+  font-size: 36px;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
 
     .hero h1 {
       font-size: 42px;
@@ -530,6 +579,12 @@
       justify-content: center;
     }
 
+    .logo-contact {
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+
     .form-group-inline {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -616,6 +671,13 @@
       right: 20px;
     }
 
+    .logo-footer {
+  width: 60px;
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+
     @media (max-width: 600px) {
       .hero h1 {
         font-size: 32px;
@@ -666,7 +728,10 @@
 
 <header class="hero">
   <div class="hero-overlay">
-    <h1>Gerardo Montini</h1>
+    <img src="img/logo.jpg" class="logo-header" alt="Logo"  class="hero-logo">
+    <h1>Servicios integrales para el hogar</h1>
+    <h2 class="hero-name">Gerardo Montini</h2>
+
     <p class="matricula">Gasista matriculado · Matrícula en trámite</p>
     <p class="subtitle">Gas · Agua · Electricidad · Construcción en seco</p>
     <div class="hero-buttons">
@@ -807,6 +872,8 @@
 </section>
 
 <section class="contact">
+    <img src="img/logo.jpg" class="logo-contact" alt="Logo Gerardo Montini">
+
   <h2>Contacto directo</h2>
   <div class="contact-info">
     <div class="contact-item">
@@ -841,9 +908,12 @@
 <footer>
   <div class="footer-features">
     <div class="footer-feature">
+        <img src="img/logo.jpg" class="logo-footer" alt="Logo">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="#22c55e">
         <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
       </svg>
+      
+
       <span>Trabajos responsables</span>
     </div>
     <div class="footer-feature">

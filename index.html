@@ -3,8 +3,664 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gerardo Montini | Gasista y Construcción</title>
-  <link rel="stylesheet" href="gasista.css">
+  <title>Gerardo Montini | Gasista Matriculado - Valle Hermoso, Córdoba</title>
+  <meta name="description" content="Gasista matriculado en Valle Hermoso, Córdoba. Instalaciones de gas, agua, electricidad, cloacas y construcción en seco. Presupuesto sin cargo.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1f2933;
+      color: #f9fafb;
+      line-height: 1.6;
+    }
+
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #f97316, #ca8a04);
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero-overlay {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .matricula {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      margin: 15px 0 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn,
+    .btn-whatsapp {
+      padding: 14px 26px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn {
+      background: #111827;
+      color: #fbbf24;
+    }
+
+    .btn-whatsapp {
+      background: #22c55e;
+      color: #022c22;
+    }
+
+    .btn:hover,
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .services {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .services h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: #fbbf24;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #030712;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .card.show {
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 18px 18px 8px;
+      color: #f97316;
+      font-size: 20px;
+    }
+
+    .card p {
+      padding: 0 18px 22px;
+      font-size: 15px;
+      color: #e5e7eb;
+    }
+
+    .coverage {
+      background: #111827;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .coverage h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #fbbf24;
+    }
+
+    .coverage-grid {
+      max-width: 800px;
+      margin: 30px auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .coverage-item {
+      background: #1f2933;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 4px solid #f97316;
+    }
+
+    .contact {
+      background: linear-gradient(135deg, #020617, #111827);
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .contact h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #fbbf24;
+    }
+
+    .contact-info {
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 15px 0;
+      font-size: 16px;
+    }
+
+    .contact-item svg {
+      width: 20px;
+      height: 20px;
+      fill: #fbbf24;
+      flex-shrink: 0;
+    }
+
+    .contact .btn-whatsapp {
+      margin-top: 20px;
+    }
+
+    .form-section {
+      background: #1f2933;
+      padding: 50px 20px;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #fbbf24;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #030712;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #fbbf24;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 2px solid #374151;
+      background: #111827;
+      color: #f9fafb;
+      font-size: 15px;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #f97316;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: #f97316;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+    }
+
+    .form-message {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+    }
+
+    .form-message.success {
+      background: #22c55e;
+      color: #022c22;
+    }
+
+    .form-message.error {
+      background: #ef4444;
+      color: white;
+    }
+
+    footer {
+      background: #020617;
+      color: #9ca3af;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+
+    .footer-features {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .footer-feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    footer .domain {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-top: 10px;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #f97316;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+      z-index: 1000;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-4px);
+    }
+
+    .gallery {
+      background: #111827;
+      padding: 60px 20px;
+    }
+
+    .gallery h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #fbbf24;
+    }
+
+    .gallery-subtitle {
+      text-align: center;
+      color: #9ca3af;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #030712;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      padding: 20px;
+      background: #030712;
+    }
+
+    .gallery-caption h3 {
+      color: #f97316;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .gallery-caption p {
+      color: #e5e7eb;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .upload-section {
+      text-align: center;
+      margin-top: 40px;
+      padding: 30px;
+      background: #1f2933;
+      border-radius: 18px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .upload-section h3 {
+      color: #fbbf24;
+      margin-bottom: 15px;
+    }
+
+    .upload-section p {
+      color: #9ca3af;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .upload-area {
+      border: 2px dashed #374151;
+      border-radius: 12px;
+      padding: 40px 20px;
+      background: #030712;
+      transition: border-color 0.3s;
+      cursor: pointer;
+    }
+
+    .upload-area:hover {
+      border-color: #f97316;
+    }
+
+    .upload-area.dragover {
+      border-color: #f97316;
+      background: #111827;
+    }
+
+    .upload-icon {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 15px;
+      fill: #fbbf24;
+    }
+
+    .upload-input {
+      display: none;
+    }
+
+    .upload-btn {
+      padding: 12px 24px;
+      background: #f97316;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      margin-top: 15px;
+    }
+
+    .upload-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .preview-container {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 15px;
+    }
+
+    .preview-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .preview-item img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .preview-remove {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-group-inline {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 15px;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+      z-index: 2001;
+    }
+
+    .lightbox-caption {
+      text-align: center;
+      color: white;
+      margin-top: 20px;
+      padding: 0 20px;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 24px;
+      backdrop-filter: blur(10px);
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .lightbox-prev {
+      left: 20px;
+    }
+
+    .lightbox-next {
+      right: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .coverage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 20px;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group-inline {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -14,8 +670,18 @@
     <p class="matricula">Gasista matriculado · Matrícula en trámite</p>
     <p class="subtitle">Gas · Agua · Electricidad · Construcción en seco</p>
     <div class="hero-buttons">
-      <a class="btn call" href="tel:3517181975">📞 Llamar</a>
-      <a class="btn-whatsapp" href="https://wa.me/5493517181975?text=Hola%20Gerardo,%20vi%20tu%20mini%20web%20y%20quiero%20consultar%20por%20un%20trabajo" target="_blank">📲 WhatsApp</a>
+      <a class="btn" href="tel:3517181975">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+        </svg>
+        Llamar
+      </a>
+      <a class="btn-whatsapp" href="https://wa.me/5493517181975?text=Hola%20Gerardo,%20vi%20tu%20sitio%20web%20y%20quiero%20consultar%20por%20un%20trabajo" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        WhatsApp
+      </a>
     </div>
   </div>
 </header>
@@ -27,47 +693,513 @@
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5hyW-bLej3foY1BcAYEvJHF_6OQfJUbSCNw&s" alt="Instalaciones de gas">
       <h3>Gas Natural</h3>
-      <p>Instalaciones domiciliarias, reparaciones, ampliaciones y seguridad.</p>
+      <p>Instalaciones domiciliarias, reparaciones, ampliaciones y certificaciones de seguridad.</p>
     </div>
 
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU6CuC_QKnPyAS7RGjDIU5xBAtHnLhX3LDhQ&s" alt="Instalaciones de agua">
       <h3>Agua</h3>
-      <p>Agua fría y caliente · Termofusión · Rosca · Reparaciones.</p>
+      <p>Agua fría y caliente · Termofusión · Rosca · Reparaciones y mantenimiento.</p>
     </div>
 
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh5LuadH8gizsoLgYrVtQe-sJC3oZ1ehbh9Q&s" alt="Cloacas">
       <h3>Cloacas</h3>
-      <p>Instalaciones sanitarias y mantenimiento general.</p>
+      <p>Instalaciones sanitarias, destapes y mantenimiento general de desagües.</p>
     </div>
 
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa8lzX8mwD9CNgraw_7jm6waQXZ_P7C-d3-w&s" alt="Electricidad">
       <h3>Electricidad</h3>
-      <p>Instalaciones eléctricas domiciliarias seguras.</p>
+      <p>Instalaciones eléctricas domiciliarias seguras y reparaciones urgentes.</p>
     </div>
 
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQw2Sgn7006jzbN-7eSfnD5HTMAdBf6ZN4Pg&s" alt="Durlock">
       <h3>Durlock</h3>
-      <p>Construcción en seco, divisiones y reformas modernas.</p>
+      <p>Construcción en seco, divisiones, cielorrasos y reformas modernas.</p>
     </div>
   </div>
 </section>
 
+<section class="gallery">
+  <h2>Trabajos realizados</h2>
+  <p class="gallery-subtitle">Algunos de los proyectos que he completado con éxito. Cada trabajo refleja mi compromiso con la calidad y seguridad.</p>
+  
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- Las imágenes se cargarán aquí dinámicamente -->
+  </div>
+
+  <div class="upload-section">
+    <h3>Administrar galería</h3>
+    <p>Agregá fotos de tus trabajos realizados para mostrar a tus clientes</p>
+    
+    <div class="upload-area" id="uploadArea">
+      <svg class="upload-icon" viewBox="0 0 24 24">
+        <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/>
+      </svg>
+      <p style="color: #fbbf24; margin-bottom: 10px;">Arrastrá imágenes aquí o hacé clic para seleccionar</p>
+      <p style="color: #9ca3af; font-size: 13px;">Formatos: JPG, PNG · Máximo 5MB por imagen</p>
+    </div>
+    
+    <input type="file" id="uploadInput" class="upload-input" accept="image/*" multiple>
+    
+    <div class="preview-container" id="previewContainer"></div>
+  </div>
+</section>
+
+<section class="coverage">
+  <h2>Zona de cobertura</h2>
+  <p>Trabajo principalmente en Valle Hermoso y zonas aledañas</p>
+  <div class="coverage-grid">
+    <div class="coverage-item">
+      <strong>Valle Hermoso</strong>
+      <p>Zona principal de trabajo</p>
+    </div>
+    <div class="coverage-item">
+      <strong>Localidades cercanas</strong>
+      <p>Consultar disponibilidad</p>
+    </div>
+    <div class="coverage-item">
+      <strong>Emergencias</strong>
+      <p>Atención prioritaria en la zona</p>
+    </div>
+  </div>
+</section>
+
+<section class="form-section">
+  <h2>Solicitar presupuesto</h2>
+  <form class="contact-form" id="contactForm">
+    <div class="form-group">
+      <label for="name">Nombre completo</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="phone">Teléfono</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="service">Tipo de servicio</label>
+      <select id="service" name="service" required>
+        <option value="">Seleccionar...</option>
+        <option value="gas">Gas Natural</option>
+        <option value="agua">Agua</option>
+        <option value="cloacas">Cloacas</option>
+        <option value="electricidad">Electricidad</option>
+        <option value="durlock">Durlock</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="message">Descripción del trabajo</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    
+    <button type="submit" class="btn-submit">Enviar consulta por WhatsApp</button>
+    
+    <div class="form-message" id="formMessage"></div>
+  </form>
+</section>
+
 <section class="contact">
   <h2>Contacto directo</h2>
-  <p>📍 Cárcano s/n – Valle Hermoso, Córdoba</p>
-  <p>📞 351 718 1975</p>
-  <p>✉️ gerardomontnini@gmail.com</p>
-  <a class="btn-whatsapp" href="https://wa.me/5493517181975?text=Hola%20Gerardo,%20necesito%20un%20presupuesto" target="_blank">Escribime por WhatsApp</a>
+  <div class="contact-info">
+    <div class="contact-item">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+      </svg>
+      <span>Cárcano s/n — Valle Hermoso, Córdoba</span>
+    </div>
+    
+    <div class="contact-item">
+      <svg viewBox="0 0 24 24">
+        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+      </svg>
+      <span>351 718 1975</span>
+    </div>
+    
+    <div class="contact-item">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      <span>gerardomontini@gmail.com</span>
+    </div>
+  </div>
+  <a class="btn-whatsapp" href="https://wa.me/5493517181975?text=Hola%20Gerardo,%20necesito%20un%20presupuesto" target="_blank">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    Escribime por WhatsApp
+  </a>
 </section>
 
 <footer>
-  <p>✔ Trabajos responsables · ✔ Presupuesto sin cargo</p>
-  <p class="domain">www.gerardomontini.com.ar (listo para dominio propio)</p>
+  <div class="footer-features">
+    <div class="footer-feature">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#22c55e">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+      <span>Trabajos responsables</span>
+    </div>
+    <div class="footer-feature">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#22c55e">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+      <span>Presupuesto sin cargo</span>
+    </div>
+    <div class="footer-feature">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#22c55e">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+      <span>Atención personalizada</span>
+    </div>
+  </div>
+  <p class="domain">www.gerardomontini.com.ar</p>
 </footer>
+
+<div class="back-to-top" id="backToTop">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">×</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<script>
+// Animación de las tarjetas al cargar
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach((card, i) => {
+    setTimeout(() => {
+      card.classList.add('show');
+    }, i * 150);
+  });
+
+  // Botón volver arriba
+  const backToTop = document.getElementById('backToTop');
+  
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  backToTop.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Formulario de contacto
+  const form = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
+
+    // Crear mensaje para WhatsApp
+    const whatsappMessage = `Hola Gerardo, mi nombre es ${name}.
+
+*Servicio solicitado:* ${service}
+*Teléfono:* ${phone}
+
+*Descripción:*
+${message}`;
+
+    const whatsappURL = `https://wa.me/5493517181975?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Abrir WhatsApp
+    window.open(whatsappURL, '_blank');
+    
+    // Mostrar mensaje de éxito
+    formMessage.textContent = '¡Redirigiendo a WhatsApp!';
+    formMessage.className = 'form-message success';
+    formMessage.style.display = 'block';
+    
+    // Limpiar formulario
+    setTimeout(() => {
+      form.reset();
+      formMessage.style.display = 'none';
+    }, 2000);
+  });
+
+  // Sistema de galería con almacenamiento persistente
+  let galleryData = [];
+  let currentLightboxIndex = 0;
+
+  // Cargar galería desde el almacenamiento
+  async function loadGallery() {
+    try {
+      const result = await window.storage.get('gallery-data');
+      if (result && result.value) {
+        galleryData = JSON.parse(result.value);
+        renderGallery();
+      } else {
+        // Cargar imágenes de ejemplo si no hay datos guardados
+        loadSampleGallery();
+      }
+    } catch (error) {
+      console.log('Cargando galería de ejemplo');
+      loadSampleGallery();
+    }
+  }
+
+  // Cargar galería de ejemplo
+  function loadSampleGallery() {
+    galleryData = [
+      {
+        url: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800',
+        title: 'Instalación de gas domiciliaria',
+        description: 'Instalación completa de gas natural en vivienda familiar'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800',
+        title: 'Sistema de agua caliente',
+        description: 'Instalación de termofusión y sistema de agua caliente'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800',
+        title: 'Renovación eléctrica',
+        description: 'Actualización completa del sistema eléctrico'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800',
+        title: 'Construcción en seco',
+        description: 'División de ambientes con durlock y terminaciones'
+      }
+    ];
+    renderGallery();
+  }
+
+  // Renderizar galería
+  function renderGallery() {
+    const galleryGrid = document.getElementById('galleryGrid');
+    
+    if (galleryData.length === 0) {
+      galleryGrid.innerHTML = '<p style="text-align: center; color: #9ca3af; grid-column: 1/-1;">Aún no hay trabajos agregados. Usá el panel de abajo para subir fotos de tus trabajos.</p>';
+      return;
+    }
+
+    galleryGrid.innerHTML = galleryData.map((item, index) => `
+      <div class="gallery-item" data-index="${index}">
+        <img src="${item.url}" alt="${item.title}" loading="lazy">
+        <div class="gallery-caption">
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
+        </div>
+      </div>
+    `).join('');
+
+    // Agregar event listeners para abrir lightbox
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const index = parseInt(this.dataset.index);
+        openLightbox(index);
+      });
+    });
+  }
+
+  // Guardar galería
+  async function saveGallery() {
+    try {
+      await window.storage.set('gallery-data', JSON.stringify(galleryData));
+      console.log('Galería guardada exitosamente');
+    } catch (error) {
+      console.error('Error al guardar galería:', error);
+    }
+  }
+
+  // Upload de imágenes
+  const uploadArea = document.getElementById('uploadArea');
+  const uploadInput = document.getElementById('uploadInput');
+  const previewContainer = document.getElementById('previewContainer');
+  let pendingImages = [];
+
+  uploadArea.addEventListener('click', () => uploadInput.click());
+
+  uploadArea.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    uploadArea.classList.add('dragover');
+  });
+
+  uploadArea.addEventListener('dragleave', () => {
+    uploadArea.classList.remove('dragover');
+  });
+
+  uploadArea.addEventListener('drop', (e) => {
+    e.preventDefault();
+    uploadArea.classList.remove('dragover');
+    handleFiles(e.dataTransfer.files);
+  });
+
+  uploadInput.addEventListener('change', (e) => {
+    handleFiles(e.target.files);
+  });
+
+  function handleFiles(files) {
+    Array.from(files).forEach(file => {
+      if (file.type.startsWith('image/') && file.size <= 5 * 1024 * 1024) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const imageData = {
+            url: e.target.result,
+            title: '',
+            description: '',
+            file: file.name
+          };
+          pendingImages.push(imageData);
+          showImagePreview(imageData, pendingImages.length - 1);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+
+  function showImagePreview(imageData, index) {
+    const previewDiv = document.createElement('div');
+    previewDiv.className = 'preview-item';
+    previewDiv.innerHTML = `
+      <img src="${imageData.url}" alt="Preview">
+      <button class="preview-remove" data-index="${index}">×</button>
+    `;
+    
+    previewDiv.querySelector('.preview-remove').addEventListener('click', function() {
+      const idx = parseInt(this.dataset.index);
+      pendingImages.splice(idx, 1);
+      previewDiv.remove();
+      updatePreviewIndices();
+    });
+
+    previewContainer.appendChild(previewDiv);
+    showImageForm(index);
+  }
+
+  function showImageForm(index) {
+    const formHTML = `
+      <div style="margin-top: 20px; padding: 20px; background: #030712; border-radius: 12px;">
+        <h4 style="color: #fbbf24; margin-bottom: 15px;">Detalles de la imagen ${index + 1}</h4>
+        <div class="form-group">
+          <label>Título del trabajo</label>
+          <input type="text" id="imgTitle${index}" placeholder="Ej: Instalación de gas">
+        </div>
+        <div class="form-group">
+          <label>Descripción</label>
+          <input type="text" id="imgDesc${index}" placeholder="Ej: Instalación completa en vivienda">
+        </div>
+        <button class="upload-btn" onclick="addImageToGallery(${index})">Agregar a galería</button>
+      </div>
+    `;
+    
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = formHTML;
+    tempDiv.id = `form${index}`;
+    previewContainer.appendChild(tempDiv);
+  }
+
+  window.addImageToGallery = function(index) {
+    const title = document.getElementById(`imgTitle${index}`).value || 'Trabajo realizado';
+    const description = document.getElementById(`imgDesc${index}`).value || 'Proyecto completado exitosamente';
+    
+    const imageData = pendingImages[index];
+    imageData.title = title;
+    imageData.description = description;
+    
+    galleryData.push(imageData);
+    saveGallery();
+    renderGallery();
+    
+    // Limpiar preview
+    pendingImages = [];
+    previewContainer.innerHTML = '';
+    uploadInput.value = '';
+  };
+
+  function updatePreviewIndices() {
+    document.querySelectorAll('.preview-remove').forEach((btn, idx) => {
+      btn.dataset.index = idx;
+    });
+  }
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+
+  function openLightbox(index) {
+    currentLightboxIndex = index;
+    showLightboxImage();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function showLightboxImage() {
+    const item = galleryData[currentLightboxIndex];
+    lightboxImg.src = item.url;
+    lightboxCaption.innerHTML = `
+      <h3 style="color: #fbbf24; margin-bottom: 8px;">${item.title}</h3>
+      <p>${item.description}</p>
+      <p style="margin-top: 10px; color: #9ca3af; font-size: 14px;">${currentLightboxIndex + 1} / ${galleryData.length}</p>
+    `;
+  }
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  
+  lightboxPrev.addEventListener('click', () => {
+    currentLightboxIndex = (currentLightboxIndex - 1 + galleryData.length) % galleryData.length;
+    showLightboxImage();
+  });
+
+  lightboxNext.addEventListener('click', () => {
+    currentLightboxIndex = (currentLightboxIndex + 1) % galleryData.length;
+    showLightboxImage();
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxPrev.click();
+    if (e.key === 'ArrowRight') lightboxNext.click();
+  });
+
+  // Cargar galería al iniciar
+  loadGallery();
+});
+</script>
 
 </body>
 </html>

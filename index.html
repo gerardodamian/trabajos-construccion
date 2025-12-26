@@ -20,70 +20,44 @@
     }
 
     .hero {
-  position: relative;
-  background-image:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('img/reparaciones-del-hogar.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-  padding: 90px 20px;
-}
+      position: relative;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('img/reparaciones-del-hogar.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-.hero-title {
-  font-size: 38px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.hero-name {
-  font-size: 26px;
-  font-weight: 600;
-  color: #fbbf24;
-  margin-top: 10px;
-}
-
-.hero-logo {
-  width: 120px;
-  max-width: 40%;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .hero-logo {
-    width: 100px;
-  }
-}
-
-/* Celular */
-@media (max-width: 480px) {
-  .hero-logo {
-    width: 80px;
-  }
-}
-
-
+    .hero-logo,
+    .logo-header {
+      width: 80px;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
 
     .hero-overlay {
       max-width: 900px;
       margin: auto;
+      padding: 0 15px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      line-height: 1.3;
     }
 
     .hero-name {
-  font-size: 36px;
-  margin-top: 5px;
-  letter-spacing: 1px;
-}
-
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
+      font-size: 32px;
+      font-weight: 700;
+      color: #fbbf24;
+      margin-top: 8px;
     }
 
     .matricula {
@@ -443,7 +417,6 @@
       overflow: hidden;
       background: #030712;
       box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-      cursor: pointer;
       transition: transform 0.3s ease;
     }
 
@@ -456,6 +429,7 @@
       height: 280px;
       object-fit: cover;
       display: block;
+      cursor: pointer;
     }
 
     .gallery-caption {
@@ -562,9 +536,6 @@
     }
 
     .preview-remove {
-      position: absolute;
-      top: 5px;
-      right: 5px;
       background: #ef4444;
       color: white;
       border: none;
@@ -580,10 +551,17 @@
     }
 
     .logo-contact {
-  width: 70px;
-  margin-bottom: 20px;
-}
+      width: 55px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+    }
 
+    .logo-footer {
+      width: 50px;
+      opacity: 0.85;
+      margin-bottom: 10px;
+      border-radius: 50%;
+    }
 
     .form-group-inline {
       display: grid;
@@ -671,20 +649,57 @@
       right: 20px;
     }
 
-    .logo-footer {
-  width: 60px;
-  opacity: 0.85;
-  margin-bottom: 10px;
-}
-
+    /* Tablet */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 50px 20px;
+      }
+      
+      .hero-logo,
+      .logo-header {
+        width: 70px;
+      }
+      
+      .hero h1 {
+        font-size: 28px;
+      }
+      
+      .hero-name {
+        font-size: 26px;
+      }
+    }
 
     @media (max-width: 600px) {
+      .hero {
+        padding: 40px 15px;
+      }
+      
+      .hero-logo,
+      .logo-header {
+        width: 60px;
+      }
+      
       .hero h1 {
-        font-size: 32px;
+        font-size: 24px;
+      }
+      
+      .hero-name {
+        font-size: 22px;
+      }
+      
+      .matricula {
+        font-size: 13px;
       }
 
       .subtitle {
-        font-size: 17px;
+        font-size: 15px;
+        margin: 12px 0 25px;
+      }
+      
+      .btn,
+      .btn-whatsapp {
+        padding: 12px 20px;
+        font-size: 14px;
       }
 
       .coverage-grid {
@@ -694,10 +709,16 @@
       .contact-form {
         padding: 20px;
       }
+      
+      .contact-item {
+        font-size: 14px;
+      }
 
       .back-to-top {
         bottom: 20px;
         right: 20px;
+        width: 45px;
+        height: 45px;
       }
 
       .gallery-grid {
@@ -721,6 +742,11 @@
       .lightbox-next {
         right: 10px;
       }
+      
+      .footer-features {
+        flex-direction: column;
+        gap: 15px;
+      }
     }
   </style>
 </head>
@@ -728,10 +754,9 @@
 
 <header class="hero">
   <div class="hero-overlay">
-    <img src="img/logo.jpg" class="logo-header" alt="Logo"  class="hero-logo">
+    <img src="img/logo.jpg" class="logo-header" alt="Logo" class="hero-logo">
     <h1>Servicios integrales para el hogar</h1>
     <h2 class="hero-name">Gerardo Montini</h2>
-
     <p class="matricula">Gasista matriculado · Matrícula en trámite</p>
     <p class="subtitle">Gas · Agua · Electricidad · Construcción en seco</p>
     <div class="hero-buttons">
@@ -753,32 +778,27 @@
 
 <section class="services">
   <h2>Servicios que realizo</h2>
-
   <div class="cards">
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5hyW-bLej3foY1BcAYEvJHF_6OQfJUbSCNw&s" alt="Instalaciones de gas">
       <h3>Gas Natural</h3>
       <p>Instalaciones domiciliarias, reparaciones, ampliaciones y certificaciones de seguridad.</p>
     </div>
-
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU6CuC_QKnPyAS7RGjDIU5xBAtHnLhX3LDhQ&s" alt="Instalaciones de agua">
       <h3>Agua</h3>
       <p>Agua fría y caliente · Termofusión · Rosca · Reparaciones y mantenimiento.</p>
     </div>
-
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh5LuadH8gizsoLgYrVtQe-sJC3oZ1ehbh9Q&s" alt="Cloacas">
       <h3>Cloacas</h3>
       <p>Instalaciones sanitarias, destapes y mantenimiento general de desagües.</p>
     </div>
-
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa8lzX8mwD9CNgraw_7jm6waQXZ_P7C-d3-w&s" alt="Electricidad">
       <h3>Electricidad</h3>
       <p>Instalaciones eléctricas domiciliarias seguras y reparaciones urgentes.</p>
     </div>
-
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQw2Sgn7006jzbN-7eSfnD5HTMAdBf6ZN4Pg&s" alt="Durlock">
       <h3>Durlock</h3>
@@ -787,15 +807,62 @@
   </div>
 </section>
 
+<section class="contact">
+  <img src="img/logo.jpg" class="logo-contact" alt="Logo Gerardo Montini">
+  <h2>Contacto directo</h2>
+  <div class="contact-info">
+    <div class="contact-item">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+      </svg>
+      <span>Cárcano s/n – Valle Hermoso, Córdoba</span>
+    </div>
+    <div class="contact-item">
+      <svg viewBox="0 0 24 24">
+        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+      </svg>
+      <span>351 718 1975</span>
+    </div>
+    <div class="contact-item">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      <span>gerardomontini@gmail.com</span>
+    </div>
+  </div>
+  <a class="btn-whatsapp" href="https://wa.me/5493517181975?text=Hola%20Gerardo,%20necesito%20un%20presupuesto" target="_blank">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    Escribime por WhatsApp
+  </a>
+</section>
+
+
+
+<div class="back-to-top" id="backToTop">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">×</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
 
 
 <section class="gallery">
   <h2>Trabajos realizados</h2>
   <p class="gallery-subtitle">Algunos de los proyectos que he completado con éxito. Cada trabajo refleja mi compromiso con la calidad y seguridad.</p>
   
-  <div class="gallery-grid" id="galleryGrid">
-    <!-- Las imágenes se cargarán aquí dinámicamente -->
-  </div>
+  <div class="gallery-grid" id="galleryGrid"></div>
 
   <div class="upload-section">
     <h3>Administrar galería</h3>
@@ -806,11 +873,10 @@
         <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/>
       </svg>
       <p style="color: #fbbf24; margin-bottom: 10px;">Arrastrá imágenes aquí o hacé clic para seleccionar</p>
-      <p style="color: #9ca3af; font-size: 13px;">Formatos: JPG, PNG · Máximo 5MB por imagen</p>
+      <p style="color: #9ca3af; font-size: 13px;">Formatos: JPG, PNG · Máximo 2MB por imagen</p>
     </div>
     
     <input type="file" id="uploadInput" class="upload-input" accept="image/*" multiple>
-    
     <div class="preview-container" id="previewContainer"></div>
   </div>
 </section>
@@ -841,12 +907,10 @@
       <label for="name">Nombre completo</label>
       <input type="text" id="name" name="name" required>
     </div>
-    
     <div class="form-group">
       <label for="phone">Teléfono</label>
       <input type="tel" id="phone" name="phone" required>
     </div>
-    
     <div class="form-group">
       <label for="service">Tipo de servicio</label>
       <select id="service" name="service" required>
@@ -859,61 +923,22 @@
         <option value="otro">Otro</option>
       </select>
     </div>
-    
     <div class="form-group">
       <label for="message">Descripción del trabajo</label>
       <textarea id="message" name="message" required></textarea>
     </div>
-    
     <button type="submit" class="btn-submit">Enviar consulta por WhatsApp</button>
-    
     <div class="form-message" id="formMessage"></div>
   </form>
-</section>
-
-<section class="contact">
-    <img src="img/logo.jpg" class="logo-contact" alt="Logo Gerardo Montini">
-
-  <h2>Contacto directo</h2>
-  <div class="contact-info">
-    <div class="contact-item">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-      </svg>
-      <span>Cárcano s/n — Valle Hermoso, Córdoba</span>
-    </div>
-    
-    <div class="contact-item">
-      <svg viewBox="0 0 24 24">
-        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-      </svg>
-      <span>351 718 1975</span>
-    </div>
-    
-    <div class="contact-item">
-      <svg viewBox="0 0 24 24">
-        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-      </svg>
-      <span>gerardomontini@gmail.com</span>
-    </div>
-  </div>
-  <a class="btn-whatsapp" href="https://wa.me/5493517181975?text=Hola%20Gerardo,%20necesito%20un%20presupuesto" target="_blank">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-    </svg>
-    Escribime por WhatsApp
-  </a>
 </section>
 
 <footer>
   <div class="footer-features">
     <div class="footer-feature">
-        <img src="img/logo.jpg" class="logo-footer" alt="Logo">
+      <img src="img/logo.jpg" class="logo-footer" alt="Logo">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="#22c55e">
         <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
       </svg>
-      
-
       <span>Trabajos responsables</span>
     </div>
     <div class="footer-feature">
@@ -932,35 +957,14 @@
   <p class="domain">https://gerardodamian.github.io/trabajos-construccion/</p>
 </footer>
 
-<div class="back-to-top" id="backToTop">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-  </svg>
-</div>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose">×</button>
-  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
-  <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
-  <div class="lightbox-content">
-    <img id="lightboxImg" src="" alt="">
-    <div class="lightbox-caption" id="lightboxCaption"></div>
-  </div>
-</div>
-
 <script>
-// Animación de las tarjetas al cargar
 document.addEventListener('DOMContentLoaded', function() {
   const cards = document.querySelectorAll('.card');
   cards.forEach((card, i) => {
-    setTimeout(() => {
-      card.classList.add('show');
-    }, i * 150);
+    setTimeout(() => card.classList.add('show'), i * 150);
   });
 
-  // Botón volver arriba
   const backToTop = document.getElementById('backToTop');
-  
   window.addEventListener('scroll', function() {
     if (window.scrollY > 300) {
       backToTop.classList.add('show');
@@ -970,25 +974,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   backToTop.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Formulario de contacto
   const form = document.getElementById('contactForm');
   const formMessage = document.getElementById('formMessage');
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
     const service = document.getElementById('service').value;
     const message = document.getElementById('message').value;
 
-    // Crear mensaje para WhatsApp
     const whatsappMessage = `Hola Gerardo, mi nombre es ${name}.
 
 *Servicio solicitado:* ${service}
@@ -998,27 +996,21 @@ document.addEventListener('DOMContentLoaded', function() {
 ${message}`;
 
     const whatsappURL = `https://wa.me/5493517181975?text=${encodeURIComponent(whatsappMessage)}`;
-    
-    // Abrir WhatsApp
     window.open(whatsappURL, '_blank');
     
-    // Mostrar mensaje de éxito
     formMessage.textContent = '¡Redirigiendo a WhatsApp!';
     formMessage.className = 'form-message success';
     formMessage.style.display = 'block';
     
-    // Limpiar formulario
     setTimeout(() => {
       form.reset();
       formMessage.style.display = 'none';
     }, 2000);
   });
 
-  // Sistema de galería con almacenamiento persistente
   let galleryData = [];
   let currentLightboxIndex = 0;
 
-  // Cargar galería desde el almacenamiento
   async function loadGallery() {
     try {
       const result = await window.storage.get('gallery-data');
@@ -1026,7 +1018,6 @@ ${message}`;
         galleryData = JSON.parse(result.value);
         renderGallery();
       } else {
-        // Cargar imágenes de ejemplo si no hay datos guardados
         loadSampleGallery();
       }
     } catch (error) {
@@ -1035,55 +1026,20 @@ ${message}`;
     }
   }
 
-  // Cargar galería de ejemplo
   function loadSampleGallery() {
     galleryData = [
-      {
-        url: 'img/cons-2.jpg',
-        title: 'Construcción en seco',
-        description: 'Consultorios en construcción en seco'
-      },
-      {
-        url: 'img/agua-1.jpeg',
-        title: 'Sistema de agua caliente',
-        description: 'Instalación de termofusión y sistema de agua caliente'
-      },
-      {
-        url: 'img/agua-2.jpeg',
-        title: 'Sistema de agua caliente y ffria',
-        description: 'Instalación de termofusión y sistema de agua caliente'
-      },
-      {
-        url: 'img/cons-3.jpg',
-        title: 'Construcción en seco',
-        description: 'División de ambientes con durlock y terminaciones'
-      },
-       {
-  url: 'img/cons-1.jpg',
-  title: 'Construcción en seco',
-  description: 'Consultorios en construcción en seco'
-},
-      {
-        url: 'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800',
-        title: 'Sistema de agua caliente',
-        description: 'Instalación de termofusión y sistema de agua caliente'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800',
-        title: 'Renovación eléctrica',
-        description: 'Actualización completa del sistema eléctrico'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800',
-        title: 'Construcción en seco',
-        description: 'División de ambientes con durlock y terminaciones'
-      }
-      
+      { url: 'img/cons-2.jpg', title: 'Construcción en seco', description: 'Consultorios en construcción en seco' },
+      { url: 'img/agua-1.jpeg', title: 'Sistema de agua caliente', description: 'Instalación de termofusión y sistema de agua caliente' },
+      { url: 'img/agua-2.jpeg', title: 'Sistema de agua caliente y fría', description: 'Instalación de termofusión y sistema de agua caliente' },
+      { url: 'img/cons-3.jpg', title: 'Construcción en seco', description: 'División de ambientes con durlock y terminaciones' },
+      { url: 'img/cons-1.jpg', title: 'Construcción en seco', description: 'Consultorios en construcción en seco' },
+      { url: 'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800', title: 'Sistema de agua caliente', description: 'Instalación de termofusión y sistema de agua caliente' },
+      { url: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800', title: 'Renovación eléctrica', description: 'Actualización completa del sistema eléctrico' },
+      { url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800', title: 'Construcción en seco', description: 'División de ambientes con durlock y terminaciones' }
     ];
     renderGallery();
   }
 
-  // Renderizar galería
   function renderGallery() {
     const galleryGrid = document.getElementById('galleryGrid');
     
@@ -1098,30 +1054,56 @@ ${message}`;
         <div class="gallery-caption">
           <h3>${item.title}</h3>
           <p>${item.description}</p>
+          
         </div>
       </div>
     `).join('');
 
-    // Agregar event listeners para abrir lightbox
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.addEventListener('click', function() {
-        const index = parseInt(this.dataset.index);
+    document.querySelectorAll('.gallery-item img').forEach((img) => {
+      img.addEventListener('click', function() {
+        const index = parseInt(this.closest('.gallery-item').dataset.index);
         openLightbox(index);
       });
     });
   }
 
-  // Guardar galería
+  window.removeFromGallery = async function(index) {
+    if (confirm('¿Estás seguro de eliminar esta imagen?')) {
+      galleryData.splice(index, 1);
+      try {
+        await saveGallery();
+        renderGallery();
+        alert('✓ Imagen eliminada exitosamente');
+      } catch (error) {
+        console.error('Error al eliminar:', error);
+        alert('Error al eliminar la imagen');
+      }
+    }
+  };
+
   async function saveGallery() {
     try {
-      await window.storage.set('gallery-data', JSON.stringify(galleryData));
+      const dataStr = JSON.stringify(galleryData);
+      const sizeInMB = new Blob([dataStr]).size / (1024 * 1024);
+      
+      if (sizeInMB > 4.5) {
+        throw new Error('Los datos son muy grandes. Intenta con imágenes más pequeñas o menos imágenes.');
+      }
+      
+      const result = await window.storage.set('gallery-data', dataStr);
+      
+      if (!result) {
+        throw new Error('No se pudo guardar la galería');
+      }
+      
       console.log('Galería guardada exitosamente');
+      return true;
     } catch (error) {
       console.error('Error al guardar galería:', error);
+      throw error;
     }
   }
 
-  // Upload de imágenes
   const uploadArea = document.getElementById('uploadArea');
   const uploadInput = document.getElementById('uploadInput');
   const previewContainer = document.getElementById('previewContainer');
@@ -1150,21 +1132,55 @@ ${message}`;
 
   function handleFiles(files) {
     Array.from(files).forEach(file => {
-      if (file.type.startsWith('image/') && file.size <= 5 * 1024 * 1024) {
+      if (file.type.startsWith('image/') && file.size <= 2 * 1024 * 1024) {
         const reader = new FileReader();
         reader.onload = (e) => {
-          const imageData = {
-            url: e.target.result,
-            title: '',
-            description: '',
-            file: file.name
-          };
-          pendingImages.push(imageData);
-          showImagePreview(imageData, pendingImages.length - 1);
+          compressImage(e.target.result, (compressed) => {
+            const imageData = {
+              url: compressed,
+              title: '',
+              description: '',
+              file: file.name
+            };
+            pendingImages.push(imageData);
+            showImagePreview(imageData, pendingImages.length - 1);
+          });
         };
         reader.readAsDataURL(file);
+      } else if (file.size > 2 * 1024 * 1024) {
+        alert('La imagen es muy grande. Por favor selecciona una imagen menor a 2MB.');
       }
     });
+  }
+
+  function compressImage(dataUrl, callback) {
+    const img = new Image();
+    img.onload = function() {
+      const canvas = document.createElement('canvas');
+      let width = img.width;
+      let height = img.height;
+      
+      const maxDimension = 1200;
+      if (width > maxDimension || height > maxDimension) {
+        if (width > height) {
+          height = (height / width) * maxDimension;
+          width = maxDimension;
+        } else {
+          width = (width / height) * maxDimension;
+          height = maxDimension;
+        }
+      }
+      
+      canvas.width = width;
+      canvas.height = height;
+      
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, width, height);
+      
+      const compressed = canvas.toDataURL('image/jpeg', 0.7);
+      callback(compressed);
+    };
+    img.src = dataUrl;
   }
 
   function showImagePreview(imageData, index) {
@@ -1172,7 +1188,7 @@ ${message}`;
     previewDiv.className = 'preview-item';
     previewDiv.innerHTML = `
       <img src="${imageData.url}" alt="Preview">
-      <button class="preview-remove" data-index="${index}">×</button>
+      <button class="preview-remove" style="position: absolute; top: 5px; right: 5px;" data-index="${index}">×</button>
     `;
     
     previewDiv.querySelector('.preview-remove').addEventListener('click', function() {
@@ -1192,13 +1208,13 @@ ${message}`;
         <h4 style="color: #fbbf24; margin-bottom: 15px;">Detalles de la imagen ${index + 1}</h4>
         <div class="form-group">
           <label>Título del trabajo</label>
-          <input type="text" id="imgTitle${index}" placeholder="Ej: Instalación de gas">
+          <input type="text" id="imgTitle${index}" placeholder="Ej: Instalación de gas" required>
         </div>
         <div class="form-group">
           <label>Descripción</label>
-          <input type="text" id="imgDesc${index}" placeholder="Ej: Instalación completa en vivienda">
+          <input type="text" id="imgDesc${index}" placeholder="Ej: Instalación completa en vivienda" required>
         </div>
-        <button class="upload-btn" onclick="addImageToGallery(${index})">Agregar a galería</button>
+        <button class="upload-btn" onclick="addImageToGallery(${index})">✓ Agregar a galería</button>
       </div>
     `;
     
@@ -1208,7 +1224,7 @@ ${message}`;
     previewContainer.appendChild(tempDiv);
   }
 
-  window.addImageToGallery = function(index) {
+  window.addImageToGallery = async function(index) {
     const title = document.getElementById(`imgTitle${index}`).value || 'Trabajo realizado';
     const description = document.getElementById(`imgDesc${index}`).value || 'Proyecto completado exitosamente';
     
@@ -1217,13 +1233,21 @@ ${message}`;
     imageData.description = description;
     
     galleryData.push(imageData);
-    saveGallery();
-    renderGallery();
     
-    // Limpiar preview
-    pendingImages = [];
-    previewContainer.innerHTML = '';
-    uploadInput.value = '';
+    try {
+      await saveGallery();
+      renderGallery();
+      
+      alert('✓ Imagen agregada exitosamente a la galería');
+      
+      pendingImages = [];
+      previewContainer.innerHTML = '';
+      uploadInput.value = '';
+    } catch (error) {
+      console.error('Error al guardar:', error);
+      alert('Error al guardar la imagen. Por favor intenta con una imagen más pequeña.');
+      galleryData.pop();
+    }
   };
 
   function updatePreviewIndices() {
@@ -1232,7 +1256,6 @@ ${message}`;
     });
   }
 
-  // Lightbox
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxCaption = document.getElementById('lightboxCaption');
@@ -1275,24 +1298,18 @@ ${message}`;
   });
 
   lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
+    if (e.target === lightbox) closeLightbox();
   });
 
-  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
-    
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') lightboxPrev.click();
     if (e.key === 'ArrowRight') lightboxNext.click();
   });
 
-  // Cargar galería al iniciar
   loadGallery();
 });
 </script>
-
 </body>
 </html>

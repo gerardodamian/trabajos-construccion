@@ -88,6 +88,9 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
     }
 
     .btn {
@@ -449,107 +452,6 @@
       line-height: 1.5;
     }
 
-    .upload-section {
-      text-align: center;
-      margin-top: 40px;
-      padding: 30px;
-      background: #1f2933;
-      border-radius: 18px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .upload-section h3 {
-      color: #fbbf24;
-      margin-bottom: 15px;
-    }
-
-    .upload-section p {
-      color: #9ca3af;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-
-    .upload-area {
-      border: 2px dashed #374151;
-      border-radius: 12px;
-      padding: 40px 20px;
-      background: #030712;
-      transition: border-color 0.3s;
-      cursor: pointer;
-    }
-
-    .upload-area:hover {
-      border-color: #f97316;
-    }
-
-    .upload-area.dragover {
-      border-color: #f97316;
-      background: #111827;
-    }
-
-    .upload-icon {
-      width: 50px;
-      height: 50px;
-      margin: 0 auto 15px;
-      fill: #fbbf24;
-    }
-
-    .upload-input {
-      display: none;
-    }
-
-    .upload-btn {
-      padding: 12px 24px;
-      background: #f97316;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-      margin-top: 15px;
-    }
-
-    .upload-btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .preview-container {
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 15px;
-    }
-
-    .preview-item {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .preview-item img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-    }
-
-    .preview-remove {
-      background: #ef4444;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 25px;
-      height: 25px;
-      cursor: pointer;
-      font-size: 16px;
-      line-height: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .logo-contact {
       width: 55px;
       margin-bottom: 15px;
@@ -561,12 +463,6 @@
       opacity: 0.85;
       margin-bottom: 10px;
       border-radius: 50%;
-    }
-
-    .form-group-inline {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 15px;
     }
 
     .lightbox {
@@ -725,10 +621,6 @@
         grid-template-columns: 1fr;
       }
 
-      .form-group-inline {
-        grid-template-columns: 1fr;
-      }
-
       .lightbox-nav {
         width: 40px;
         height: 40px;
@@ -754,7 +646,7 @@
 
 <header class="hero">
   <div class="hero-overlay">
-    <img src="img/logo.jpg" class="logo-header" alt="Logo" class="hero-logo">
+    <img src="img/logo.jpg" class="logo-header" alt="Logo">
     <h1>Servicios integrales para el hogar</h1>
     <h2 class="hero-name">Gerardo Montini</h2>
     <p class="matricula">Gasista matriculado · Matrícula en trámite</p>
@@ -804,6 +696,27 @@
       <h3>Durlock</h3>
       <p>Construcción en seco, divisiones, cielorrasos y reformas modernas.</p>
     </div>
+  <div class="card">
+      <img src="data:image/jpeg;base64,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" alt="Herreria">
+      <h3>Herreria</h3>
+      <p>Todo tipo de rejas y cerramientos, portones corredizos y reformas modernas. Soldaduras en hierro en general</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <h2>Trabajos realizados</h2>
+  <p class="gallery-subtitle">Algunos de los proyectos que he completado con éxito. Cada trabajo refleja mi compromiso con la calidad y seguridad.</p>
+  
+  <div class="gallery-grid" id="galleryGrid"></div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <button class="btn" onclick="openGalleryLightbox(0)" style="padding: 14px 28px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+      </svg>
+      Ver galería completa
+    </button>
   </div>
 </section>
 
@@ -836,49 +749,6 @@
     </svg>
     Escribime por WhatsApp
   </a>
-</section>
-
-
-
-<div class="back-to-top" id="backToTop">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-  </svg>
-</div>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose">×</button>
-  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
-  <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
-  <div class="lightbox-content">
-    <img id="lightboxImg" src="" alt="">
-    <div class="lightbox-caption" id="lightboxCaption"></div>
-  </div>
-</div>
-
-
-
-<section class="gallery">
-  <h2>Trabajos realizados</h2>
-  <p class="gallery-subtitle">Algunos de los proyectos que he completado con éxito. Cada trabajo refleja mi compromiso con la calidad y seguridad.</p>
-  
-  <div class="gallery-grid" id="galleryGrid"></div>
-
-  <div class="upload-section">
-    <h3>Administrar galería</h3>
-    <p>Agregá fotos de tus trabajos realizados para mostrar a tus clientes</p>
-    
-    <div class="upload-area" id="uploadArea">
-      <svg class="upload-icon" viewBox="0 0 24 24">
-        <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/>
-      </svg>
-      <p style="color: #fbbf24; margin-bottom: 10px;">Arrastrá imágenes aquí o hacé clic para seleccionar</p>
-      <p style="color: #9ca3af; font-size: 13px;">Formatos: JPG, PNG · Máximo 2MB por imagen</p>
-    </div>
-    
-    <input type="file" id="uploadInput" class="upload-input" accept="image/*" multiple>
-    <div class="preview-container" id="previewContainer"></div>
-  </div>
 </section>
 
 <section class="coverage">
@@ -957,6 +827,22 @@
   <p class="domain">https://gerardodamian.github.io/trabajos-construccion/</p>
 </footer>
 
+<div class="back-to-top" id="backToTop">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">×</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const cards = document.querySelectorAll('.card');
@@ -1008,53 +894,31 @@ ${message}`;
     }, 2000);
   });
 
-  let galleryData = [];
+  // CONFIGURACIÓN DE IMÁGENES DE LA GALERÍA
+  // Agregá o modificá las imágenes aquí
+  const galleryData = [
+    { url: 'img/cons-2.jpg', title: 'Construcción en seco', description: 'Consultorios en construcción en seco' },
+    { url: 'img/agua-1.jpeg', title: 'Sistema de agua caliente', description: 'Instalación de termofusión y sistema de agua caliente' },
+    { url: 'img/agua-2.jpeg', title: 'Sistema de agua caliente y fría', description: 'Instalación de termofusión y sistema de agua caliente' },
+    { url: 'img/cons-3.jpg', title: 'Construcción en seco', description: 'División de ambientes con durlock y terminaciones' },
+    { url: 'img/cons-1.jpg', title: 'Construcción en seco', description: 'Consultorios en construcción en seco' },
+    { url: 'img/dur-1.jpeg', title: 'Durlock', description: 'construccion en seco de isla sobre barra' },
+    { url: 'img/dur-2.jpeg', title: 'Durlock', description: 'isla sobre desayunador con luz' },
+    { url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800', title: 'Construcción en seco', description: 'División de ambientes con durlock y terminaciones' }
+  ];
+  
   let currentLightboxIndex = 0;
-
-  async function loadGallery() {
-    try {
-      const result = await window.storage.get('gallery-data');
-      if (result && result.value) {
-        galleryData = JSON.parse(result.value);
-        renderGallery();
-      } else {
-        loadSampleGallery();
-      }
-    } catch (error) {
-      console.log('Cargando galería de ejemplo');
-      loadSampleGallery();
-    }
-  }
-
-  function loadSampleGallery() {
-    galleryData = [
-      { url: 'img/cons-2.jpg', title: 'Construcción en seco', description: 'Consultorios en construcción en seco' },
-      { url: 'img/agua-1.jpeg', title: 'Sistema de agua caliente', description: 'Instalación de termofusión y sistema de agua caliente' },
-      { url: 'img/agua-2.jpeg', title: 'Sistema de agua caliente y fría', description: 'Instalación de termofusión y sistema de agua caliente' },
-      { url: 'img/cons-3.jpg', title: 'Construcción en seco', description: 'División de ambientes con durlock y terminaciones' },
-      { url: 'img/cons-1.jpg', title: 'Construcción en seco', description: 'Consultorios en construcción en seco' },
-      { url: 'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800', title: 'Sistema de agua caliente', description: 'Instalación de termofusión y sistema de agua caliente' },
-      { url: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800', title: 'Renovación eléctrica', description: 'Actualización completa del sistema eléctrico' },
-      { url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800', title: 'Construcción en seco', description: 'División de ambientes con durlock y terminaciones' }
-    ];
-    renderGallery();
-  }
 
   function renderGallery() {
     const galleryGrid = document.getElementById('galleryGrid');
     
-    if (galleryData.length === 0) {
-      galleryGrid.innerHTML = '<p style="text-align: center; color: #9ca3af; grid-column: 1/-1;">Aún no hay trabajos agregados. Usá el panel de abajo para subir fotos de tus trabajos.</p>';
-      return;
-    }
-
-    galleryGrid.innerHTML = galleryData.map((item, index) => `
+    // Mostrar solo las primeras 3 imágenes
+    galleryGrid.innerHTML = galleryData.slice(0, 3).map((item, index) => `
       <div class="gallery-item" data-index="${index}">
         <img src="${item.url}" alt="${item.title}" loading="lazy">
         <div class="gallery-caption">
           <h3>${item.title}</h3>
           <p>${item.description}</p>
-          
         </div>
       </div>
     `).join('');
@@ -1066,195 +930,11 @@ ${message}`;
       });
     });
   }
-
-  window.removeFromGallery = async function(index) {
-    if (confirm('¿Estás seguro de eliminar esta imagen?')) {
-      galleryData.splice(index, 1);
-      try {
-        await saveGallery();
-        renderGallery();
-        alert('✓ Imagen eliminada exitosamente');
-      } catch (error) {
-        console.error('Error al eliminar:', error);
-        alert('Error al eliminar la imagen');
-      }
-    }
+  
+  // Función para abrir la galería desde el botón
+  window.openGalleryLightbox = function(index) {
+    openLightbox(index);
   };
-
-  async function saveGallery() {
-    try {
-      const dataStr = JSON.stringify(galleryData);
-      const sizeInMB = new Blob([dataStr]).size / (1024 * 1024);
-      
-      if (sizeInMB > 4.5) {
-        throw new Error('Los datos son muy grandes. Intenta con imágenes más pequeñas o menos imágenes.');
-      }
-      
-      const result = await window.storage.set('gallery-data', dataStr);
-      
-      if (!result) {
-        throw new Error('No se pudo guardar la galería');
-      }
-      
-      console.log('Galería guardada exitosamente');
-      return true;
-    } catch (error) {
-      console.error('Error al guardar galería:', error);
-      throw error;
-    }
-  }
-
-  const uploadArea = document.getElementById('uploadArea');
-  const uploadInput = document.getElementById('uploadInput');
-  const previewContainer = document.getElementById('previewContainer');
-  let pendingImages = [];
-
-  uploadArea.addEventListener('click', () => uploadInput.click());
-
-  uploadArea.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    uploadArea.classList.add('dragover');
-  });
-
-  uploadArea.addEventListener('dragleave', () => {
-    uploadArea.classList.remove('dragover');
-  });
-
-  uploadArea.addEventListener('drop', (e) => {
-    e.preventDefault();
-    uploadArea.classList.remove('dragover');
-    handleFiles(e.dataTransfer.files);
-  });
-
-  uploadInput.addEventListener('change', (e) => {
-    handleFiles(e.target.files);
-  });
-
-  function handleFiles(files) {
-    Array.from(files).forEach(file => {
-      if (file.type.startsWith('image/') && file.size <= 2 * 1024 * 1024) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          compressImage(e.target.result, (compressed) => {
-            const imageData = {
-              url: compressed,
-              title: '',
-              description: '',
-              file: file.name
-            };
-            pendingImages.push(imageData);
-            showImagePreview(imageData, pendingImages.length - 1);
-          });
-        };
-        reader.readAsDataURL(file);
-      } else if (file.size > 2 * 1024 * 1024) {
-        alert('La imagen es muy grande. Por favor selecciona una imagen menor a 2MB.');
-      }
-    });
-  }
-
-  function compressImage(dataUrl, callback) {
-    const img = new Image();
-    img.onload = function() {
-      const canvas = document.createElement('canvas');
-      let width = img.width;
-      let height = img.height;
-      
-      const maxDimension = 1200;
-      if (width > maxDimension || height > maxDimension) {
-        if (width > height) {
-          height = (height / width) * maxDimension;
-          width = maxDimension;
-        } else {
-          width = (width / height) * maxDimension;
-          height = maxDimension;
-        }
-      }
-      
-      canvas.width = width;
-      canvas.height = height;
-      
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0, width, height);
-      
-      const compressed = canvas.toDataURL('image/jpeg', 0.7);
-      callback(compressed);
-    };
-    img.src = dataUrl;
-  }
-
-  function showImagePreview(imageData, index) {
-    const previewDiv = document.createElement('div');
-    previewDiv.className = 'preview-item';
-    previewDiv.innerHTML = `
-      <img src="${imageData.url}" alt="Preview">
-      <button class="preview-remove" style="position: absolute; top: 5px; right: 5px;" data-index="${index}">×</button>
-    `;
-    
-    previewDiv.querySelector('.preview-remove').addEventListener('click', function() {
-      const idx = parseInt(this.dataset.index);
-      pendingImages.splice(idx, 1);
-      previewDiv.remove();
-      updatePreviewIndices();
-    });
-
-    previewContainer.appendChild(previewDiv);
-    showImageForm(index);
-  }
-
-  function showImageForm(index) {
-    const formHTML = `
-      <div style="margin-top: 20px; padding: 20px; background: #030712; border-radius: 12px;">
-        <h4 style="color: #fbbf24; margin-bottom: 15px;">Detalles de la imagen ${index + 1}</h4>
-        <div class="form-group">
-          <label>Título del trabajo</label>
-          <input type="text" id="imgTitle${index}" placeholder="Ej: Instalación de gas" required>
-        </div>
-        <div class="form-group">
-          <label>Descripción</label>
-          <input type="text" id="imgDesc${index}" placeholder="Ej: Instalación completa en vivienda" required>
-        </div>
-        <button class="upload-btn" onclick="addImageToGallery(${index})">✓ Agregar a galería</button>
-      </div>
-    `;
-    
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = formHTML;
-    tempDiv.id = `form${index}`;
-    previewContainer.appendChild(tempDiv);
-  }
-
-  window.addImageToGallery = async function(index) {
-    const title = document.getElementById(`imgTitle${index}`).value || 'Trabajo realizado';
-    const description = document.getElementById(`imgDesc${index}`).value || 'Proyecto completado exitosamente';
-    
-    const imageData = pendingImages[index];
-    imageData.title = title;
-    imageData.description = description;
-    
-    galleryData.push(imageData);
-    
-    try {
-      await saveGallery();
-      renderGallery();
-      
-      alert('✓ Imagen agregada exitosamente a la galería');
-      
-      pendingImages = [];
-      previewContainer.innerHTML = '';
-      uploadInput.value = '';
-    } catch (error) {
-      console.error('Error al guardar:', error);
-      alert('Error al guardar la imagen. Por favor intenta con una imagen más pequeña.');
-      galleryData.pop();
-    }
-  };
-
-  function updatePreviewIndices() {
-    document.querySelectorAll('.preview-remove').forEach((btn, idx) => {
-      btn.dataset.index = idx;
-    });
-  }
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
@@ -1308,8 +988,10 @@ ${message}`;
     if (e.key === 'ArrowRight') lightboxNext.click();
   });
 
-  loadGallery();
+  // Cargar galería al inicio
+  renderGallery();
 });
 </script>
 </body>
-</html>
+</html>>
+

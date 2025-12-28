@@ -5,642 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gerardo Montini | Gasista Matriculado - Valle Hermoso, Córdoba</title>
   <meta name="description" content="Gasista matriculado en Valle Hermoso, Córdoba. Instalaciones de gas, agua, electricidad, cloacas y construcción en seco. Presupuesto sin cargo.">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <link rel="stylesheet" href="gasista.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+  <link rel="apple-touch-icon" href="img/favicon-180.png">
+
+
+  <!-- Open Graph -->
+<meta property="og:title" content="Gerardo Montini | Gasista Matriculado en Valle Hermoso">
+<meta property="og:description"
+ content="Gasista matriculado. Gas, agua, electricidad, pintura e impermeabilización de techos en Valle Hermoso. Presupuesto sin cargo.">
+
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/logo.jpg">
+<meta property="og:locale" content="es_AR">
+
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gerardo Montini | Gasista Matriculado">
+<meta name="twitter:description" content="Servicios integrales para el hogar en Valle Hermoso">
+<meta name="twitter:image" content="img/logo.jpg">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Gerardo Montini",
+  "image": "img/logo.jpg",
+  "telephone": "+5493517181975",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Valle Hermoso",
+    "addressRegion": "Córdoba",
+    "addressCountry": "AR"
+  },
+  "areaServed": "Punilla"
+}
+</script>
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #1f2933;
-      color: #f9fafb;
-      line-height: 1.6;
-    }
-
-    .hero {
-      position: relative;
-      background-image:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-        url('img/reparaciones-del-hogar.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .hero-logo,
-    .logo-header {
-      width: 80px;
-      height: auto;
-      margin-bottom: 15px;
-      border-radius: 50%;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-
-    .hero-overlay {
-      max-width: 900px;
-      margin: auto;
-      padding: 0 15px;
-    }
-
-    .hero h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
-      line-height: 1.3;
-    }
-
-    .hero-name {
-      font-size: 32px;
-      font-weight: 700;
-      color: #fbbf24;
-      margin-top: 8px;
-    }
-
-    .matricula {
-      font-size: 14px;
-      opacity: 0.9;
-      margin-bottom: 5px;
-    }
-
-    .subtitle {
-      font-size: 20px;
-      margin: 15px 0 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn,
-    .btn-whatsapp {
-      padding: 14px 26px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      border: none;
-      font-size: 16px;
-    }
-
-    .btn {
-      background: #111827;
-      color: #fbbf24;
-    }
-
-    .btn-whatsapp {
-      background: #22c55e;
-      color: #022c22;
-    }
-
-    .btn:hover,
-    .btn-whatsapp:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    .services {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .services h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 32px;
-      color: #fbbf24;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: #030712;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .card.show {
-      animation: fadeInUp 0.5s ease forwards;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
-    .card h3 {
-      margin: 18px 18px 8px;
-      color: #f97316;
-      font-size: 20px;
-    }
-
-    .card p {
-      padding: 0 18px 22px;
-      font-size: 15px;
-      color: #e5e7eb;
-    }
-
-    .coverage {
-      background: #111827;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .coverage h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #fbbf24;
-    }
-
-    .coverage-grid {
-      max-width: 800px;
-      margin: 30px auto 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .coverage-item {
-      background: #1f2933;
-      padding: 20px;
-      border-radius: 12px;
-      border-left: 4px solid #f97316;
-    }
-
-    .contact {
-      background: linear-gradient(135deg, #020617, #111827);
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .contact h2 {
-      font-size: 28px;
-      margin-bottom: 30px;
-      color: #fbbf24;
-    }
-
-    .contact-info {
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin: 15px 0;
-      font-size: 16px;
-    }
-
-    .contact-item svg {
-      width: 20px;
-      height: 20px;
-      fill: #fbbf24;
-      flex-shrink: 0;
-    }
-
-    .contact .btn-whatsapp {
-      margin-top: 20px;
-    }
-
-    .form-section {
-      background: #1f2933;
-      padding: 50px 20px;
-    }
-
-    .form-section h2 {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 30px;
-      color: #fbbf24;
-    }
-
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #030712;
-      padding: 30px;
-      border-radius: 18px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: #fbbf24;
-      font-weight: 500;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 2px solid #374151;
-      background: #111827;
-      color: #f9fafb;
-      font-size: 15px;
-      transition: border-color 0.2s;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #f97316;
-    }
-
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .btn-submit {
-      width: 100%;
-      padding: 14px;
-      background: #f97316;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .btn-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
-    }
-
-    .form-message {
-      margin-top: 15px;
-      padding: 12px;
-      border-radius: 8px;
-      text-align: center;
-      display: none;
-    }
-
-    .form-message.success {
-      background: #22c55e;
-      color: #022c22;
-    }
-
-    .form-message.error {
-      background: #ef4444;
-      color: white;
-    }
-
-    footer {
-      background: #020617;
-      color: #9ca3af;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
-    }
-
-    .footer-features {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-bottom: 15px;
-    }
-
-    .footer-feature {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    footer .domain {
-      font-size: 12px;
-      opacity: 0.7;
-      margin-top: 10px;
-    }
-
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #f97316;
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
-      z-index: 1000;
-    }
-
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top:hover {
-      transform: translateY(-4px);
-    }
-
-    .gallery {
-      background: #111827;
-      padding: 60px 20px;
-    }
-
-    .gallery h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 32px;
-      color: #fbbf24;
-    }
-
-    .gallery-subtitle {
-      text-align: center;
-      color: #9ca3af;
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .gallery-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .gallery-item {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-      background: #030712;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-6px);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      display: block;
-      cursor: pointer;
-    }
-
-    .gallery-caption {
-      padding: 20px;
-      background: #030712;
-    }
-
-    .gallery-caption h3 {
-      color: #f97316;
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-
-    .gallery-caption p {
-      color: #e5e7eb;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .logo-contact {
-      width: 55px;
-      margin-bottom: 15px;
-      border-radius: 50%;
-    }
-
-    .logo-footer {
-      width: 50px;
-      opacity: 0.85;
-      margin-bottom: 10px;
-      border-radius: 50%;
-    }
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox.active {
-      display: flex;
-    }
-
-    .lightbox-content {
-      position: relative;
-      max-width: 90%;
-      max-height: 90%;
-    }
-
-    .lightbox-content img {
-      max-width: 100%;
-      max-height: 90vh;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #ef4444;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      font-size: 24px;
-      line-height: 1;
-      z-index: 2001;
-    }
-
-    .lightbox-caption {
-      text-align: center;
-      color: white;
-      margin-top: 20px;
-      padding: 0 20px;
-    }
-
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      font-size: 24px;
-      backdrop-filter: blur(10px);
-    }
-
-    .lightbox-nav:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-
-    .lightbox-prev {
-      left: 20px;
-    }
-
-    .lightbox-next {
-      right: 20px;
-    }
-
-    /* Tablet */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 50px 20px;
-      }
-      
-      .hero-logo,
-      .logo-header {
-        width: 70px;
-      }
-      
-      .hero h1 {
-        font-size: 28px;
-      }
-      
-      .hero-name {
-        font-size: 26px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero {
-        padding: 40px 15px;
-      }
-      
-      .hero-logo,
-      .logo-header {
-        width: 60px;
-      }
-      
-      .hero h1 {
-        font-size: 24px;
-      }
-      
-      .hero-name {
-        font-size: 22px;
-      }
-      
-      .matricula {
-        font-size: 13px;
-      }
-
-      .subtitle {
-        font-size: 15px;
-        margin: 12px 0 25px;
-      }
-      
-      .btn,
-      .btn-whatsapp {
-        padding: 12px 20px;
-        font-size: 14px;
-      }
-
-      .coverage-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-form {
-        padding: 20px;
-      }
-      
-      .contact-item {
-        font-size: 14px;
-      }
-
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .lightbox-nav {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-      }
-
-      .lightbox-prev {
-        left: 10px;
-      }
-
-      .lightbox-next {
-        right: 10px;
-      }
-      
-      .footer-features {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -650,7 +54,7 @@
     <h1>Servicios integrales para el hogar</h1>
     <h2 class="hero-name">Gerardo Montini</h2>
     <p class="matricula">Gasista matriculado · Matrícula en trámite</p>
-    <p class="subtitle">Gas · Agua · Electricidad · Construcción en seco</p>
+    <p class="subtitle">Gas · Agua · Electricidad · Construcción en seco · Herreria · Pintura de viviendas e impermeabilización de techos</p>
     <div class="hero-buttons">
       <a class="btn" href="tel:3517181975">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -668,38 +72,50 @@
   </div>
 </header>
 
+
+
 <section class="services">
   <h2>Servicios que realizo</h2>
   <div class="cards">
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5hyW-bLej3foY1BcAYEvJHF_6OQfJUbSCNw&s" alt="Instalaciones de gas">
-      <h3>Gas Natural</h3>
+      <h3>🔥 Gas Natural</h3>
       <p>Instalaciones domiciliarias, reparaciones, ampliaciones y certificaciones de seguridad.</p>
     </div>
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU6CuC_QKnPyAS7RGjDIU5xBAtHnLhX3LDhQ&s" alt="Instalaciones de agua">
-      <h3>Agua</h3>
+      <h3> 🚿Agua</h3>
       <p>Agua fría y caliente · Termofusión · Rosca · Reparaciones y mantenimiento.</p>
     </div>
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh5LuadH8gizsoLgYrVtQe-sJC3oZ1ehbh9Q&s" alt="Cloacas">
-      <h3>Cloacas</h3>
+      <h3> 🛀 Cloacas</h3>
       <p>Instalaciones sanitarias, destapes y mantenimiento general de desagües.</p>
     </div>
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa8lzX8mwD9CNgraw_7jm6waQXZ_P7C-d3-w&s" alt="Electricidad">
-      <h3>Electricidad</h3>
+      <h3> ⚡ Electricidad</h3>
       <p>Instalaciones eléctricas domiciliarias seguras y reparaciones urgentes.</p>
     </div>
     <div class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQw2Sgn7006jzbN-7eSfnD5HTMAdBf6ZN4Pg&s" alt="Durlock">
-      <h3>Durlock</h3>
+      <h3> 🧱 Durlock</h3>
       <p>Construcción en seco, divisiones, cielorrasos y reformas modernas.</p>
+    </div>
+    <div class="card">
+      <img src="https://www.shutterstock.com/image-photo/worker-paints-facade-walls-house-260nw-2469459841.jpg" alt="Pintura">
+      <h3> 🎨 Pintura</h3>
+      <p>Pintura de viviendas e impermeabilización de techos.</p>
     </div>
   <div class="card">
       <img src="data:image/jpeg;base64,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" alt="Herreria">
-      <h3>Herreria</h3>
+      <h3> ⛓️‍💥Herreria</h3>
       <p>Todo tipo de rejas y cerramientos, portones corredizos y reformas modernas. Soldaduras en hierro en general</p>
+    </div>
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtNujCSHR80EgX8-DSxp809KZhuGGg9_CeCg&s" alt="Pintura">
+      <h3> 🗒️ Presupuestos</h3>
+      <p>Presupuestos sin cargo.</p>
     </div>
   </div>
 </section>
@@ -719,6 +135,22 @@
     </button>
   </div>
 </section>
+
+<section>
+    <div class="video-center">
+      <h2>Portón corredizo con control remoto</h2>
+
+      <video controls autoplay muted loop>
+        <source src="videos/porton.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+      </video>
+
+      <div class="video-note">
+        Trabajo real realizado por nosotros · Video sin edición
+      </div>
+    </div>
+  </section>
+
 
 <section class="contact">
   <img src="img/logo.jpg" class="logo-contact" alt="Logo Gerardo Montini">
@@ -756,7 +188,7 @@
   <p>Trabajo principalmente en Valle Hermoso y zonas aledañas</p>
   <div class="coverage-grid">
     <div class="coverage-item">
-      <strong>Valle Hermoso</strong>
+      <strong>Valle Hermoso, La Falda, Huerta Grande y Villa Giardino</strong>
       <p>Zona principal de trabajo</p>
     </div>
     <div class="coverage-item">
@@ -790,6 +222,8 @@
         <option value="cloacas">Cloacas</option>
         <option value="electricidad">Electricidad</option>
         <option value="durlock">Durlock</option>
+        <option value="Pintura">Pintura</option>
+        <option value="Herreria">Herreria</option>
         <option value="otro">Otro</option>
       </select>
     </div>
@@ -801,6 +235,54 @@
     <div class="form-message" id="formMessage"></div>
   </form>
 </section>
+
+<section class="gm-stats">
+  <div><strong>150+</strong><span>Proyectos realizados</span></div>
+  <div><strong>33+ desde 1992</strong><span>Años de experiencia</span></div>
+  <div><strong>100%</strong><span>Clientes satisfechos</span></div>
+</section>
+
+<section class="gm-why">
+  <h2>¿Por qué elegirme?</h2>
+  <ul>
+    <li>✔ Trabajo responsable</li>
+    <li>✔ Atención personalizada</li>
+    <li>✔ Presupuesto sin cargo</li>
+    <li>✔ Experiencia comprobable</li>
+    <li>✔ Cumplimiento y prolijidad</li>
+    <li>✔ Garantía real</li>
+  </ul>
+</section>
+
+<section class="gm-process">
+  <h2>Proceso de trabajo</h2>
+  <ol>
+    <li>Contacto y diagnóstico</li>
+    <li>Presupuesto claro</li>
+    <li>Ejecución del trabajo</li>
+    <li>Entrega y garantía</li>
+  </ol>
+</section>
+
+<section class="gm-testimonials">
+  <h2>Testimonios</h2>
+  <blockquote>“Trabajo impecable y muy responsable.”</blockquote>
+  <blockquote>“Cumplió en tiempo y forma, muy recomendable.”</blockquote>
+  <blockquote>“Excelente atención y precio.”</blockquote>
+</section>
+
+<section class="gm-faq">
+  <h2>Preguntas frecuentes</h2>
+  <details><summary>¿Hacés presupuestos?</summary><p>Sí, sin cargo.</p></details>
+  <details><summary>¿Trabajás con urgencias?</summary><p>Sí, según disponibilidad.</p></details>
+  <details><summary>¿Qué zonas cubrís?</summary><p>Valle Hermoso y alrededores.</p></details>
+</section>
+
+<section class="gm-payments">
+  <h2>Métodos de pago</h2>
+  <p>Efectivo · Transferencia · MercadoPago</p>
+</section>
+
 
 <footer>
   <div class="footer-features">
@@ -843,155 +325,15 @@
   </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const cards = document.querySelectorAll('.card');
-  cards.forEach((card, i) => {
-    setTimeout(() => card.classList.add('show'), i * 150);
-  });
 
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
-  });
 
-  backToTop.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
 
-  const form = document.getElementById('contactForm');
-  const formMessage = document.getElementById('formMessage');
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const service = document.getElementById('service').value;
-    const message = document.getElementById('message').value;
 
-    const whatsappMessage = `Hola Gerardo, mi nombre es ${name}.
 
-*Servicio solicitado:* ${service}
-*Teléfono:* ${phone}
+<script src="gasista.js"></script>
 
-*Descripción:*
-${message}`;
 
-    const whatsappURL = `https://wa.me/5493517181975?text=${encodeURIComponent(whatsappMessage)}`;
-    window.open(whatsappURL, '_blank');
-    
-    formMessage.textContent = '¡Redirigiendo a WhatsApp!';
-    formMessage.className = 'form-message success';
-    formMessage.style.display = 'block';
-    
-    setTimeout(() => {
-      form.reset();
-      formMessage.style.display = 'none';
-    }, 2000);
-  });
-
-  // CONFIGURACIÓN DE IMÁGENES DE LA GALERÍA
-  // Agregá o modificá las imágenes aquí
-  const galleryData = [
-    { url: 'img/cons-2.jpg', title: 'Construcción en seco', description: 'Consultorios en construcción en seco' },
-    { url: 'img/agua-1.jpeg', title: 'Sistema de agua caliente', description: 'Instalación de termofusión y sistema de agua caliente' },
-    { url: 'img/agua-2.jpeg', title: 'Sistema de agua caliente y fría', description: 'Instalación de termofusión y sistema de agua caliente' },
-    { url: 'img/cons-3.jpg', title: 'Construcción en seco', description: 'División de ambientes con durlock y terminaciones' },
-    { url: 'img/cons-1.jpg', title: 'Construcción en seco', description: 'Consultorios en construcción en seco' },
-    { url: 'img/dur-1.jpeg', title: 'Durlock', description: 'construccion en seco de isla sobre barra' },
-    { url: 'img/dur-2.jpeg', title: 'Durlock', description: 'isla sobre desayunador con luz' },
-    { url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800', title: 'Construcción en seco', description: 'División de ambientes con durlock y terminaciones' }
-  ];
-  
-  let currentLightboxIndex = 0;
-
-  function renderGallery() {
-    const galleryGrid = document.getElementById('galleryGrid');
-    
-    // Mostrar solo las primeras 3 imágenes
-    galleryGrid.innerHTML = galleryData.slice(0, 3).map((item, index) => `
-      <div class="gallery-item" data-index="${index}">
-        <img src="${item.url}" alt="${item.title}" loading="lazy">
-        <div class="gallery-caption">
-          <h3>${item.title}</h3>
-          <p>${item.description}</p>
-        </div>
-      </div>
-    `).join('');
-
-    document.querySelectorAll('.gallery-item img').forEach((img) => {
-      img.addEventListener('click', function() {
-        const index = parseInt(this.closest('.gallery-item').dataset.index);
-        openLightbox(index);
-      });
-    });
-  }
-  
-  // Función para abrir la galería desde el botón
-  window.openGalleryLightbox = function(index) {
-    openLightbox(index);
-  };
-
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxCaption = document.getElementById('lightboxCaption');
-  const lightboxClose = document.getElementById('lightboxClose');
-  const lightboxPrev = document.getElementById('lightboxPrev');
-  const lightboxNext = document.getElementById('lightboxNext');
-
-  function openLightbox(index) {
-    currentLightboxIndex = index;
-    showLightboxImage();
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  function showLightboxImage() {
-    const item = galleryData[currentLightboxIndex];
-    lightboxImg.src = item.url;
-    lightboxCaption.innerHTML = `
-      <h3 style="color: #fbbf24; margin-bottom: 8px;">${item.title}</h3>
-      <p>${item.description}</p>
-      <p style="margin-top: 10px; color: #9ca3af; font-size: 14px;">${currentLightboxIndex + 1} / ${galleryData.length}</p>
-    `;
-  }
-
-  lightboxClose.addEventListener('click', closeLightbox);
-  
-  lightboxPrev.addEventListener('click', () => {
-    currentLightboxIndex = (currentLightboxIndex - 1 + galleryData.length) % galleryData.length;
-    showLightboxImage();
-  });
-
-  lightboxNext.addEventListener('click', () => {
-    currentLightboxIndex = (currentLightboxIndex + 1) % galleryData.length;
-    showLightboxImage();
-  });
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') lightboxPrev.click();
-    if (e.key === 'ArrowRight') lightboxNext.click();
-  });
-
-  // Cargar galería al inicio
-  renderGallery();
-});
-</script>
 </body>
-</html>>
+</html>
 
